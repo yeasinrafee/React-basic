@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Title from './components/Title';
 
 function App() {
@@ -28,10 +28,10 @@ function App() {
         <button onClick={() => setShowDatas(true)}>Show Data</button>
       </div>}
       {showDatas && datas.map((data) => (
-        <div key={data.id}>
+        <React.Fragment key={data.id}>
           <h2>{data.title}</h2>
           <button onClick={() => handleClick(data.id)}>Delete</button>
-        </div>
+        </React.Fragment>
       ))}
     </div>
   );
