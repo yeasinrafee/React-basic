@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EventList from "./components/EventList";
 import Modal from "./components/Modal";
 import Title from './components/Title';
 
@@ -29,12 +30,16 @@ function App() {
       {!showDatas && <div>
         <button onClick={() => setShowDatas(true)}>Show Data</button>
       </div>}
-      {showDatas && datas.map((data) => (
+
+      {/* {showDatas && datas.map((data) => (
         <React.Fragment key={data.id}>
           <h2>{data.title}</h2>
           <button onClick={() => handleClick(data.id)}>Delete</button>
         </React.Fragment>
-      ))}
+      ))} */}
+
+       { showDatas && <EventList datas ={datas} handleClick={handleClick}/> }
+
       <div>
         <button onClick={()=> setShowModal(true)}>Show Modal</button>
       </div>
