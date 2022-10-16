@@ -4,7 +4,7 @@ import Title from './components/Title';
 
 function App() {
   const [showDatas, setShowDatas] = useState(true);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [datas, setDatas] = useState([
     { title: "Hello Welcome to react basic", id: 1 },
     { title: "This is Yeasin Rafee from codeVikings", id: 2 },
@@ -35,6 +35,9 @@ function App() {
           <button onClick={() => handleClick(data.id)}>Delete</button>
         </React.Fragment>
       ))}
+      <div>
+        <button onClick={()=> setShowModal(true)}>Show Modal</button>
+      </div>
       {showModal && <Modal showModal={setShowModal}>
         <h2>This is my first modal using react</h2>
         <p>Yep! I made a modal by using react</p>
