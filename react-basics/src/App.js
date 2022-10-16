@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Title from './components/Title';
 
 function App() {
   const [showDatas, setShowDatas] = useState(true);
@@ -14,8 +15,12 @@ function App() {
     });
   };
 
+  const title = "Hey, I'm learning React";
+  const subTitle = "Learning react is fun untill you understand";
+
   return (
     <div className="App">
+      <Title title = {title} subTitle={subTitle}/>
       {showDatas && <div>
         <button onClick={() => setShowDatas(false)}>Hide Data</button>
       </div>}
