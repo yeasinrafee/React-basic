@@ -1,8 +1,11 @@
+import './Title.css';
+
 export default function Title({title, subTitle}){
     return (
-        <>
-            <h1>{title}</h1>
-            <h2>{subTitle}</h2>
-        </>
+        <div className='title-block'>
+            <h1 className="title">{title}</h1>
+            <br/>
+            <h2 className="subtitle">{subTitle}</h2>
+        </div>
     )
 }
