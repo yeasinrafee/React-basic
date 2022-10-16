@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "./components/Modal";
 import Title from './components/Title';
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
           <button onClick={() => handleClick(data.id)}>Delete</button>
         </React.Fragment>
       ))}
+      <Modal>
+        <h2>This is my first modal using react</h2>
+        <p>Yep! I made a modal by using react</p>
+      </Modal>
     </div>
   );
 }
