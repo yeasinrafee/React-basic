@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './NewEventForm.css';
 
-export default function NewEventForm() {
+export default function NewEventForm({addNewData}) {
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
 
@@ -9,9 +9,19 @@ export default function NewEventForm() {
         setTitle('');
         setDate('');
     }
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        const datas = {
+            title : title,
+            date : date,
+            id : Math.floor(Math.random() * 1000)
+        }
+        handleReset();
+        addNewData(datas);
+    }
 
   return (
-    <form className="new-event-form">
+    <form className="new-event-form" onSubmit={handleSubmit}>
         <label>
             <span>Event Title:</span>
             <input 
